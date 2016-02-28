@@ -2,10 +2,9 @@
   "name"         : "node-web-scrape",
   "version"      : "0.0.1",
   "description"  : "Scrape the guc intra.",
-  "main"         : "server.js",
+  "main"         : "script.js",
   "author"       : "kajo",
   "dependencies" : {
-    "express"    : "latest",
     "request"    : "latest",
     "cheerio"    : "latest"
   }
