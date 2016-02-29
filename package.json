@@ -5,7 +5,9 @@
   "main"         : "script.js",
   "author"       : "kajo",
   "dependencies" : {
-    "request"    : "latest",
-    "cheerio"    : "latest"
+    "httpntlm"   : "latest",
+    "cheerio"    : "latest",
+    "resumer"    : "latest",
+    "http"       : "latest"
   }
 }
