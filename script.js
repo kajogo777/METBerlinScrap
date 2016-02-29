@@ -1,6 +1,7 @@
 var fs = require('fs');
 var httpntlm = require('httpntlm');
 var cheerio = require('cheerio');
+//var exec = require('child_process').exec;
 var address = 'http://student.guc.edu.eg';
 var usname;
 var passw;
@@ -46,7 +47,7 @@ function getMaterials(myUrl, parentDir){
   httpntlm.get({
       url: myUrl,
       username: usname,
-      password: passw,
+      password: passw
   }, function (err, res){
     if(!err){
 
@@ -70,7 +71,14 @@ function getMaterials(myUrl, parentDir){
         if (!fs.existsSync(newPath)){
           var name = decodeURI( temp[temp.length-1]);
           var newPath = parentDir + '/' + name;
-
+          // console.log(`curl --ntlm --negotiate -u \"${usname}\":\"${passw}\" -o \"${newPath}\" \"${myUrl}\"`);
+          // exec(`curl --ntlm --negotiate -u \"${usname}\":\"${passw}\" -o \"${newPath}\" \"${myUrl}\"`, function (error, stdout, stderr) {
+          //               console.log('stdout: ' + stdout);
+          //               console.log('stderr: ' + stderr);
+          //               if (error !== null) {
+          //                 console.log('exec error: ' + error);
+          //               }
+          // });
           // var resumer = require('resumer');
           // var buffer = new Buffer(res.body);
           // var stream = resumer().queue(buffer).end();
@@ -85,7 +93,6 @@ function getMaterials(myUrl, parentDir){
               console.log(err1);
             }else {
               console.log("downloaded " + name);
-              console.log(res);
             }
           });
         }

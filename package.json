@@ -8,6 +8,7 @@
     "httpntlm"   : "latest",
     "cheerio"    : "latest",
     "resumer"    : "latest",
-    "http"       : "latest"
+    "sys"        : "latest",
+    "child_process" : "latest"
   }
 }
